@@ -1,0 +1,26 @@
+{
+    "deploy": {
+        "packages": [{
+            "files": [
+                "**/*",
+            ],
+
+            "exclude": [
+                "node_modules/**",
+                ".git/**",
+                ".vscode/**",
+                "**/node_modules/**",
+            ],
+            "deployOnSave": false
+        }],
+        "targets": [{
+            "type": "sftp",
+            "name": "AliyunServer",
+            "dir": "/root/source/docker_ci",
+            "host": "39.100.142.241",
+            "port": 22,
+            "user": "root",
+            "privateKey": "/Users/mengkeniu/.ssh/mac_niu_ecs.pem"
+        }],
+    },
+}
